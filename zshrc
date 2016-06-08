@@ -26,14 +26,50 @@ alias dki="docker run -i -t -P"
 # Execute interactive container, e.g., $dex base /bin/bash
 alias dex="docker exec -i -t"
 
+# Get top docker container, e.g., $docker top myContainerName
+alias dtop="docker top"
+
+# Start a docker container, e.g., $docker start myContainerName
+alias dup="docker start"
+
+# Stop a docker container, e.g., $docker stop myContainerName
+alias dstp="docker stop"
+
+# Restart a docker container, e.g., $docker restart myContainerName
+alias drst="docker restart"
+
+# Attach to a detached docker container, e.g., $docker attach myContainerName
+alias datt="docker attach"
+
+# Restart a docker container, e.g., $docker restart myContainerName
+alias drst="docker restart"
+
+# Get docker info, e.g., $docker info
+alias dinf="docker info"
+
+# Remove/Delete a docker container, e.g., $docker rm myContainerName
+alias drm="docker rm"
+
+# Force Remove/Delete a docker container, e.g., $docker rm -f myContainerName
+alias drm="docker rm -f"
+
+# Get Logs for a container, e.g., $docker logs myContainerName
+alias dlog="docker logs"
+
+# Get and Follow Logs for a container, e.g., $docker logs -f myContainerName
+alias dlogf="docker logs -f"
+
+# Inspect a container, e.g., $docker inspect myContainerName
+alias dins="docker inspect"
+
 # Stop all containers
-dstop() { docker stop $(docker ps -a -q); }
+dstopall() { docker stop $(docker ps -a -q); }
 
 # Remove all containers
-drm() { docker rm $(docker ps -a -q); }
+drmall() { docker rm $(docker ps -a -q); }
 
 # Stop and Remove all containers
-alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+alias dstrm='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 
 # Remove all images
 dri() { docker rmi $(docker images -q); }
